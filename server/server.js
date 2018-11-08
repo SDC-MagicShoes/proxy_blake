@@ -1,11 +1,5 @@
-const express = require('express');
-const path = require('path');
+const app = require('./app.js')
 
-const port = process.env.PORT || 3000;
-const app = express();
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.listen(port, () => {
-  console.log(`proxy server running at: http://localhost:${port}`);
+app.listen(3000, () => {
+  console.log('>>>>>>>>> listening on port 3000');
 });
