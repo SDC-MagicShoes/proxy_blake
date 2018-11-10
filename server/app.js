@@ -31,11 +31,11 @@ app.get('/:productSku/descrip', (req, res) => {
     .catch(err => res.status(500).end(err.message));
 });
 
-// app.get('/:productSku/reviews', (req, res) => {
-//   axios.get(`http://localhost:3004/${ req.params.productSku }/reviews`)
-//     .then(resp => res.status(200).send(resp.data))
-//     .catch(err => res.status(500).end(err.message));
-// });
+app.get('/:productSku/reviews', (req, res) => {
+  axios.get(`http://ec2-3-16-150-245.us-east-2.compute.amazonaws.com:3004/${ req.params.productSku }/reviews`)
+    .then(resp => res.status(200).send(resp.data))
+    .catch(err => res.status(500).end(err.message));
+});
 
 app.get('/:productSku/images', (req, res) => {
   axios.get(`http://ec2-54-174-152-69.compute-1.amazonaws.com:3005/${ req.params.productSku }/images`)
