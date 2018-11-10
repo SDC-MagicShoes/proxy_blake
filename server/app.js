@@ -7,17 +7,17 @@ const app = express();
 app.use(express.static(path.join(__dirname, './../public')));
 app.use(express.static(path.join(__dirname, './../node_modules')));
 
-// app.get('/:productSku/similar', (req, res) => {
-//   axios.get(`http://localhost:3001/${ req.params.productSku }/similar`)
-//     .then(resp => res.status(200).send(resp.data))
-//     .catch(err => res.status(500).end(err.message));
-// });
+app.get('/:productSku/similar', (req, res) => {
+  axios.get(`http://carousel.e2jhvfkpam.us-east-1.elasticbeanstalk.com/${ req.params.productSku }/similar`)
+    .then(resp => res.status(200).send(resp.data))
+    .catch(err => res.status(500).end(err.message));
+});
 
-// app.get('/:productSku/similar', (req, res) => {
-//   axios.get(`http://localhost:3001/${ req.params.productSku }/similar`)
-//     .then(resp => res.status(200).send(resp.data))
-//     .catch(err => res.status(500).end(err.message));
-// });
+app.get('/:productSku/similar', (req, res) => {
+  axios.get(`http://ec2-54-245-41-15.us-west-2.compute.amazonaws.com/${ req.params.productSku }/similar`)
+    .then(resp => res.status(200).send(resp.data))
+    .catch(err => res.status(500).end(err.message));
+});
 
 app.get('/:productSku/sizes', (req, res) => {
   axios.get(`http://ec2-18-225-6-210.us-east-2.compute.amazonaws.com:3003/${ req.params.productSku }/sizes`)

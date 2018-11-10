@@ -3,14 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start-all": "concurrently --kill-others 'npm run init-3001' 'npm run init-3002' 'npm run init-3003' 'npm run init-3004' 'npm run init-3005' 'npm run init-3006' 'npm run init-3007'",
-    "init-3001": "nodemon ./../01-similar-products-carousel/server/server.js",
-    "init-3002": "nodemon ./../02-header-search/server/server.js",
-    "init-3003": "nodemon ./../03-sizing-and-cart/server/server.js",
-    "init-3004": "nodemon ./../04-product-reviews/server/server.js",
-    "init-3005": "nodemon ./../05-photo-gallery/server/server.js",
-    "init-3006": "nodemon ./../06-name-and-colors/server/server.js",
-    "init-3007": "nodemon ./../07-page-footer/server/server.js",
     "start": "nodemon server/server.js"
   },
   "repository": {
